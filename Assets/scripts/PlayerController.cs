@@ -56,5 +56,9 @@ public class PlayerController : MonoBehaviour
 
         _fallVelocity += gravity * Time.fixedDeltaTime;
         _characterController.Move(Vector3.down * _fallVelocity * Time.fixedDeltaTime);
+        if(_characterController.isGrounded)
+        {
+            _fallVelocity = 0;
+        }
     }
 }
